@@ -20,15 +20,15 @@ namespace WpfApp1
                 List<string> strings2 = class1.hshu1("商品价格.txt");
                 List<string> strings3 = class1.hshu1("商品数量.txt");
                 int bliang0 = 0;
-                int bliang1 = 0;
+                float bliang1 = 0;
                 foreach (string s in strings0)
                 {
                     listbox0.Items.Add(s);
-                    bliang1 += int.Parse(strings2[bliang0]) * int.Parse(strings3[bliang0]);
+                    bliang1 += float.Parse(strings2[bliang0]) * float.Parse(strings3[bliang0]);
                     bliang0++;
                 }
                 label3.Content = "0";
-                label4.Content += bliang1.ToString();
+                label4.Content += bliang1.ToString("0.00");
             }
             else
             {
@@ -45,7 +45,7 @@ namespace WpfApp1
             label0.Content = strings1[listbox0.SelectedIndex];
             label1.Content = strings2[listbox0.SelectedIndex];
             label2.Content = strings3[listbox0.SelectedIndex];
-            label3.Content = (int.Parse(strings2[listbox0.SelectedIndex])*int.Parse(strings3[listbox0.SelectedIndex])).ToString();
+            label3.Content = (float.Parse(strings2[listbox0.SelectedIndex])*float.Parse(strings3[listbox0.SelectedIndex])).ToString("0.00");
         }
     }
 }

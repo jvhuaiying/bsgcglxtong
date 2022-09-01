@@ -59,7 +59,7 @@ namespace WpfApp1
                     {
                         List<string> strings1 = class1.hshu1("商品数量.txt");
                         List<string> strings2 = class1.hshu1("商品价格.txt");
-                        strings2[strings.IndexOf(bliang0)] = ((int.Parse(strings2[strings.IndexOf(bliang0)]) * int.Parse(strings1[strings.IndexOf(bliang0)]) + int.Parse(bliang2) * int.Parse(bliang3)) / (int.Parse(strings1[strings.IndexOf(bliang0)]) + int.Parse(bliang3))).ToString();
+                        strings2[strings.IndexOf(bliang0)] = ((float.Parse(strings2[strings.IndexOf(bliang0)]) * float.Parse(strings1[strings.IndexOf(bliang0)]) + float.Parse(bliang2) * float.Parse(bliang3)) / (float.Parse(strings1[strings.IndexOf(bliang0)]) + float.Parse(bliang3))).ToString("0.00");
                         File.Delete(AppDomain.CurrentDomain.BaseDirectory + "商品价格.txt");
                         foreach (string s in strings2)
                         {
@@ -68,7 +68,7 @@ namespace WpfApp1
                                 streamWriter.WriteLine(s);
                             }
                         }
-                        strings1[strings.IndexOf(bliang0)] = (int.Parse(strings1[strings.IndexOf(bliang0)]) + int.Parse(bliang3)).ToString();
+                        strings1[strings.IndexOf(bliang0)] = ((float.Parse(strings1[strings.IndexOf(bliang0)])*10000 + float.Parse(bliang3)*10000)/10000).ToString();
                         File.Delete(AppDomain.CurrentDomain.BaseDirectory + "商品数量.txt");
                         foreach (string s in strings1)
                         {
